@@ -3,57 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ภาพบน + iFrame ล่าง</title>
+  <title>ภาพบน + iFrame ล่าง (เต็มจอ)</title>
 
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden; /* กันเลื่อน */
     }
 
-    .wrap {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* รูปด้านบน */
+    /* รูปด้านบนให้ลอย ไม่กินพื้นที่ iframe */
     .top-image {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 35vh; /* ปรับสูงตามต้องการ */
+      height: 35vh;
       object-fit: cover;
+      z-index: 10;
     }
 
-    /* iframe ด้านล่าง */
+    /* iframe เต็ม 100vh จริง */
     .bottom-iframe {
-      flex: 1;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       border: none;
+      display: block;
+      position: relative;
+      z-index: 1;
     }
   </style>
 
 </head>
 <body>
 
-<div class="wrap">
-
-  <!-- รูปด้านบน -->
+  <!-- รูปด้านบน (ลอย ไม่กินพื้นที่เว็บ) -->
   <a href="https://autorich2rich.com/player/login?post_id=10&form_id=d1ff511&referer_title=&queried_id=24&txtuserid=&txtuserpass=">
     <img src="https://t1.blockdit.com/photos/2024/10/671aee8f3fc00a3ab57be87e_800x0xcover_eo7S4QfO.jpg"
-         class="top-image" alt="banner">
+         class="top-image"
+         alt="banner">
   </a>
 
-  <!-- iFrame ด้านล่าง -->
+  <!-- iframe เต็มจอ -->
   <iframe 
     class="bottom-iframe"
     src="https://m.pg-demo.com/2012025/index.html?l=th&ot=ca7094186b309ee149c55c8822e7ecf2&btt=2&or=23pqxqfz%3D7bgwwslv4%3Dzlj&__hv=2fMEQCIHVGh%2B1dyl4Qmvx2FHvdFrXzxo2mtYcVUi6mHAVy2CrSAiAH5ARQ8RHlY6YOzV2ovg4cTDrIUA5FS6OtqZojRe8G7g%3D%3D&__sv=010601azkdnuO6ltZVmUGtzsn2ffZ6gHyGjSKF2-IwTQIlRjo&from=https://jaonai-slot.me/&from=&language=th-TH"
     title="ทดลองเล่น pg"
     scrolling="no">
   </iframe>
-
-</div>
 
 </body>
 </html>
