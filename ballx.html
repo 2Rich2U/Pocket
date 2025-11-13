@@ -4,39 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ภาพบน + iFrame ล่าง</title>
+
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+    }
+
+    .wrap {
+      height: 100%;
       display: flex;
       flex-direction: column;
-      height: 100vh;
     }
 
     /* รูปด้านบน */
     .top-image {
       width: 100%;
-      height: 35vh; /* ปรับสูงรูปได้ */
-      object-fit: cover; /* ให้รูปเต็มและไม่บิด */
+      height: 35vh; /* ปรับสูงตามต้องการ */
+      object-fit: cover;
     }
 
     /* iframe ด้านล่าง */
     .bottom-iframe {
-      flex: 1; /* กินพื้นที่ที่เหลือทั้งหมด */
-	height: 100%;
+      flex: 1;
       width: 100%;
+      height: 100%;
       border: none;
     }
   </style>
+
 </head>
 <body>
 
+<div class="wrap">
+
   <!-- รูปด้านบน -->
-  <a href="https://autorich2rich.com/player/login?post_id=10&form_id=d1ff511&referer_title=&queried_id=24&txtuserid=&txtuserpass="><img src="https://t1.blockdit.com/photos/2024/10/671aee8f3fc00a3ab57be87e_800x0xcover_eo7S4QfO.jpg" class="top-image" alt="banner"></a>
+  <a href="https://autorich2rich.com/player/login?post_id=10&form_id=d1ff511&referer_title=&queried_id=24&txtuserid=&txtuserpass=">
+    <img src="https://t1.blockdit.com/photos/2024/10/671aee8f3fc00a3ab57be87e_800x0xcover_eo7S4QfO.jpg"
+         class="top-image" alt="banner">
+  </a>
 
   <!-- iFrame ด้านล่าง -->
-  <iframe src="https://m.pg-demo.com/2012025/index.html?l=th&ot=ca7094186b309ee149c55c8822e7ecf2&btt=2&or=23pqxqfz%3D7bgwwslv4%3Dzlj&__hv=2fMEQCIHVGh%2B1dyl4Qmvx2FHvdFrXzxo2mtYcVUi6mHAVy2CrSAiAH5ARQ8RHlY6YOzV2ovg4cTDrIUA5FS6OtqZojRe8G7g%3D%3D&__sv=010601azkdnuO6ltZVmUGtzsn2ffZ6gHyGjSKF2-IwTQIlRjo&from=https://jaonai-slot.me/&from=&language=th-TH" class="iframe-game" title="ทดลองเล่น pg" frameborder="0" display="block" scrolling="no" ></iframe></div>
-				
+  <iframe 
+    class="bottom-iframe"
+    src="https://m.pg-demo.com/2012025/index.html?l=th&ot=ca7094186b309ee149c55c8822e7ecf2&btt=2&or=23pqxqfz%3D7bgwwslv4%3Dzlj&__hv=2fMEQCIHVGh%2B1dyl4Qmvx2FHvdFrXzxo2mtYcVUi6mHAVy2CrSAiAH5ARQ8RHlY6YOzV2ovg4cTDrIUA5FS6OtqZojRe8G7g%3D%3D&__sv=010601azkdnuO6ltZVmUGtzsn2ffZ6gHyGjSKF2-IwTQIlRjo&from=https://jaonai-slot.me/&from=&language=th-TH"
+    title="ทดลองเล่น pg"
+    scrolling="no">
+  </iframe>
+
+</div>
 
 </body>
 </html>
