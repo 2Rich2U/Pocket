@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เกมสล็อตทดลองเล่น</title>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+
+  /* iframe เต็มจอ */
+  iframe {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* --- Popup --- */
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  .popup-overlay.show {
+    display: flex;
+  }
+
+  .popup-box {
+    background: #1c2331;
+    padding: 20px;
+    border-radius: 14px;
+    width: 300px;
+    max-width: 90%;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+
+  .popup-box h2 {
+    margin-top: 0;
+  }
+
+  .popup-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #00000040;
+    border: none;
+    color: white;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .popup-btn {
+    margin-top: 12px;
+    padding: 10px 16px;
+    background: #06b6d4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+</style>
+
+</head>
+<body>
+
+<!-- iframe เต็มจอ -->
+<iframe src="https://m.pg-demo.com/1903012/index.html?l=th&ot=ca7094186b309ee149c55c8822e7ecf2&btt=2&or=23pqxqfz%3D7bgwwslv4%3Dzlj&__hv=2fMEQCIHVGh%2B1dyl4Qmvx2FHvdFrXzxo2mtYcVUi6mHAVy2CrSAiAH5ARQ8RHlY6YOzV2ovg4cTDrIUA5FS6OtqZojRe8G7g%3D%3D&__sv=010601azkdnuO6ltZVmUGtzsn2ffZ6gHyGjSKF2-IwTQIlRjo&from=https://jaonai-slot.me/&from=&language=th-TH" class="iframe-game" title="ทดลองเล่น pg" frameborder="0" display="block" scrolling="no" ></iframe></div>
+							
+
+<!-- Popup -->
+<div id="popup" class="popup-overlay">
+  <div class="popup-box">
+    <button class="popup-close" id="popupClose">×</button>
+    <h2>ไม่อยากลองสมัครเล่นจริงหน่อยหรอ</h2>
+    <p>แตกง่ายกว่านี้อีกนะ ถ้าไม่อยากเล่นจริงก็ปิดตรงนี้ได้น้าถ้าอยากเล่นจริงสมัครเลยน้า</p>
+
+    <button class="popup-btn" onclick="location.href='https://autorich2rich.com/player/login'">
+      สมัครตอนนี้
+    </button>
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById("popup");
+  const popupClose = document.getElementById("popupClose");
+
+  function showPopup() {
+    popup.classList.add("show");
+  }
+
+  function hidePopup() {
+    popup.classList.remove("show");
+  }
+
+  // โผล่ทุก 2 นาที = 120000 ms
+  setInterval(showPopup, 120000);
+
+  // ปิด popup
+  popupClose.onclick = hidePopup;
+
+  // คลิกนอกกรอบเพื่อปิด
+  popup.onclick = function(e) {
+    if (e.target === popup) hidePopup();
+  };
+
+  // กด Esc ปิด
+  document.onkeydown = function(e) {
+    if (e.key === "Escape") hidePopup();
+  };
+</script>
+
+</body>
+</html>
